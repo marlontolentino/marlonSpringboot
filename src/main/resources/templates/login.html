@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Marlon Spring Boot App</title>
+	<style>
+		.loginForm {
+			padding-top: 10px;
+			height: 40vh;
+			width: 20vw;
+			margin: 20vh auto;
+			background-color: gray;
+			text-align: center;
+		}
+		body {
+			background-color: white;
+		}
+		input {
+			position: relative;
+			margin: 5px auto;
+			display: flex;
+		}
+		form {
+		  margin: 0;
+		  position: relative;
+		  top: 30%;
+		}
+		h1 {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>Welcome to Marlon Spring Boot Application!</h1>
+	<div class="loginForm">
+		<form method="post" action="http://localhost:8080/login" novalidate>
+			<label>Username<input type="text" placeholder="Username" /></label><br>
+			<label>Password<input type="password" placeholder="Password" /></label><br>
+			<input type="submit" />
+		</form>
+	</div>
+</body>
+
+</html>
