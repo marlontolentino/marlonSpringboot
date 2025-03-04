@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<title>Marlon Spring Boot App</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<style>
 		.loginForm {
 			padding-top: 10px;
@@ -29,10 +31,13 @@
 <body>
 	<h1>Welcome to Marlon Spring Boot Application!</h1>
 	<div class="loginForm">
-		<form method="post" action="http://localhost:8080/login" novalidate>
-			<label>Username<input type="text" placeholder="Username" /></label><br>
-			<label>Password<input type="password" placeholder="Password" /></label><br>
-			<input type="submit" />
+		<form method="post" th:action="@{/login}" novalidate>
+			<input type="text" placeholder="Username" th:field="${username}" /><br>
+			<input type="password" placeholder="Password" th:field="${password}" /><br>
+			<button type="submit" class="btn btn-primary">Login</button>
+			<div th:if="${error}" class="alert alert-danger mt-3" role="alert">
+				<span th:text="${error}"></span>
+			</div>
 		</form>
 	</div>
 </body>
